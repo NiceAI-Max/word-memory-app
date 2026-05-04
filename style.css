@@ -1,16 +1,26 @@
 /* 基础样式 */
 :root {
-    --primary-color: #4361ee;
-    --secondary-color: #3f37c9;
-    --accent-color: #4895ef;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
-    --success-color: #4bb543;
-    --warning-color: #f0ad4e;
-    --danger-color: #d9534f;
-    --border-color: #dee2e6;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --radius: 8px;
+    --primary-color: #FFB5C2;
+    --secondary-color: #B5D8FF;
+    --accent-color: #D8B5FF;
+    --light-color: #FFF5F7;
+    --dark-color: #4A4A4A;
+    --success-color: #B5FFD8;
+    --warning-color: #FFE5B5;
+    --danger-color: #FFB5B5;
+    --border-color: #F0E0E8;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+    
+    /* 马卡龙色系 */
+    --macaron-pink: #FFB5C2;
+    --macaron-blue: #B5D8FF;
+    --macaron-green: #B5FFD8;
+    --macaron-purple: #D8B5FF;
+    --macaron-yellow: #FFE5B5;
+    --macaron-orange: #FFCAB5;
+    --macaron-mint: #B5FFE5;
+    --macaron-lavender: #E5B5FF;
 }
 
 * {
@@ -23,7 +33,8 @@ body {
     font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
-    background-color: #f5f7fa;
+    background: linear-gradient(135deg, #FFF5F7 0%, #F0F7FF 50%, #F7F0FF 100%);
+    min-height: 100vh;
 }
 
 .container {
@@ -35,8 +46,8 @@ body {
 header {
     text-align: center;
     margin-bottom: 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 25px;
+    background: linear-gradient(135deg, var(--macaron-pink), var(--macaron-lavender), var(--macaron-blue));
     color: white;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -56,8 +67,8 @@ header h1 {
     display: none;
     margin-top: 15px;
     padding: 10px 20px;
-    background: #4bb543;
-    color: white;
+    background: var(--macaron-green);
+    color: var(--dark-color);
     border: none;
     border-radius: var(--radius);
     font-size: 1rem;
@@ -66,7 +77,7 @@ header h1 {
 }
 
 #init-audio:hover {
-    background: #3d9b35;
+    background: #8BFFB5;
 }
 
 #init-audio:disabled {
@@ -78,10 +89,10 @@ header h1 {
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
     margin-bottom: 20px;
     background: white;
-    padding: 10px;
+    padding: 12px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
@@ -97,23 +108,31 @@ header h1 {
     transition: all 0.3s ease;
 }
 
+.tab-btn:nth-child(1) { background: var(--macaron-pink); color: white; }
+.tab-btn:nth-child(2) { background: var(--macaron-blue); color: white; }
+.tab-btn:nth-child(3) { background: var(--macaron-green); color: var(--dark-color); }
+.tab-btn:nth-child(4) { background: var(--macaron-purple); color: white; }
+.tab-btn:nth-child(5) { background: var(--macaron-yellow); color: var(--dark-color); }
+.tab-btn:nth-child(6) { background: var(--macaron-orange); color: white; }
+
 .tab-btn:hover {
-    background: var(--accent-color);
-    color: white;
+    opacity: 0.85;
+    transform: translateY(-2px);
 }
 
 .tab-btn.active {
-    background: var(--primary-color);
-    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
 
 /* 内容区域 */
 .content {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 25px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     min-height: 400px;
+    backdrop-filter: blur(10px);
 }
 
 .tab-content {
@@ -125,10 +144,10 @@ header h1 {
 }
 
 .tab-content h2 {
-    color: var(--primary-color);
+    color: var(--macaron-purple);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--light-color);
+    border-bottom: 2px solid var(--macaron-pink);
 }
 
 /* 表单样式 */
@@ -172,24 +191,22 @@ header h1 {
 }
 
 .btn.primary {
-    background: var(--primary-color);
+    background: var(--macaron-pink);
     color: white;
 }
 
 .btn.primary:hover {
-    background: var(--secondary-color);
+    background: #FF9DB0;
 }
 
 .btn.secondary {
-    background: var(--light-color);
-    color: var(--dark-color);
-    border: 2px solid var(--border-color);
+    background: var(--macaron-blue);
+    color: white;
+    border: none;
 }
 
 .btn.secondary:hover {
-    background: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
+    background: #9DC8FF;
 }
 
 /* 单词列表 */
@@ -210,7 +227,15 @@ header h1 {
     background: var(--light-color);
     border-radius: var(--radius);
     margin-bottom: 10px;
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--macaron-pink);
+}
+
+.word-item:nth-child(even) {
+    border-left-color: var(--macaron-blue);
+}
+
+.word-item:nth-child(3n) {
+    border-left-color: var(--macaron-purple);
 }
 
 .word-item .word-info {
@@ -287,14 +312,14 @@ header h1 {
 }
 
 .flashcard-front {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--macaron-pink), var(--macaron-lavender));
     color: white;
 }
 
 .flashcard-back {
     background: white;
     transform: rotateY(180deg);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--macaron-pink);
 }
 
 .word-display h3 {
@@ -367,22 +392,22 @@ header h1 {
 }
 
 .btn.rating[data-rating="1"] {
-    background: var(--danger-color);
+    background: var(--macaron-orange);
     color: white;
 }
 
 .btn.rating[data-rating="2"] {
-    background: var(--warning-color);
-    color: white;
+    background: var(--macaron-yellow);
+    color: var(--dark-color);
 }
 
 .btn.rating[data-rating="3"] {
-    background: var(--success-color);
-    color: white;
+    background: var(--macaron-green);
+    color: var(--dark-color);
 }
 
 .btn.rating[data-rating="4"] {
-    background: var(--primary-color);
+    background: var(--macaron-pink);
     color: white;
 }
 
@@ -396,7 +421,7 @@ header h1 {
 
 #review-progress {
     height: 100%;
-    background: var(--primary-color);
+    background: linear-gradient(90deg, var(--macaron-pink), var(--macaron-lavender));
     width: 0%;
     transition: width 0.3s ease;
 }
@@ -428,11 +453,20 @@ header h1 {
 }
 
 .card-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     padding: 20px;
     text-align: center;
 }
+
+/* 马卡龙色系卡片样式 */
+.card.macaron-pink .card-header { background: linear-gradient(135deg, var(--macaron-pink), #FF9DB0); }
+.card.macaron-blue .card-header { background: linear-gradient(135deg, var(--macaron-blue), #9DC8FF); }
+.card.macaron-green .card-header { background: linear-gradient(135deg, var(--macaron-green), #8BFFB5); }
+.card.macaron-purple .card-header { background: linear-gradient(135deg, var(--macaron-purple), #C88BFF); }
+.card.macaron-yellow .card-header { background: linear-gradient(135deg, var(--macaron-yellow), #FFD88B); }
+.card.macaron-orange .card-header { background: linear-gradient(135deg, var(--macaron-orange), #FFB08B); }
+.card.macaron-mint .card-header { background: linear-gradient(135deg, var(--macaron-mint), #8BFFD8); }
+.card.macaron-lavender .card-header { background: linear-gradient(135deg, var(--macaron-lavender), #D88BFF); }
 
 .card-header h3 {
     font-size: 1.8rem;
@@ -454,6 +488,15 @@ header h1 {
     text-align: center;
 }
 
+.card.macaron-pink .card-footer { background: #FFF0F3; }
+.card.macaron-blue .card-footer { background: #F0F7FF; }
+.card.macaron-green .card-footer { background: #F0FFF7; }
+.card.macaron-purple .card-footer { background: #F7F0FF; }
+.card.macaron-yellow .card-footer { background: #FFFBF0; }
+.card.macaron-orange .card-footer { background: #FFF5F0; }
+.card.macaron-mint .card-footer { background: #F0FFF7; }
+.card.macaron-lavender .card-footer { background: #F7F0FF; }
+
 /* 测试区域 */
 .test-modes {
     display: flex;
@@ -470,11 +513,17 @@ header h1 {
     border: 2px solid var(--border-color);
 }
 
+.btn.mode-btn:nth-child(1) { border-color: var(--macaron-pink); }
+.btn.mode-btn:nth-child(2) { border-color: var(--macaron-blue); }
+.btn.mode-btn:nth-child(3) { border-color: var(--macaron-purple); }
+
 .btn.mode-btn.active {
-    background: var(--primary-color);
     color: white;
-    border-color: var(--primary-color);
 }
+
+.btn.mode-btn:nth-child(1).active { background: var(--macaron-pink); }
+.btn.mode-btn:nth-child(2).active { background: var(--macaron-blue); }
+.btn.mode-btn:nth-child(3).active { background: var(--macaron-purple); }
 
 .test-question {
     text-align: center;
@@ -484,7 +533,7 @@ header h1 {
 #test-prompt {
     font-size: 1.8rem;
     margin-bottom: 30px;
-    color: var(--primary-color);
+    color: var(--macaron-purple);
 }
 
 #test-options {
@@ -510,13 +559,13 @@ header h1 {
 }
 
 .option-btn.correct {
-    border-color: var(--success-color);
-    background: #e8f5e9;
+    border-color: var(--macaron-green);
+    background: #E8FFE8;
 }
 
 .option-btn.incorrect {
-    border-color: var(--danger-color);
-    background: #ffebee;
+    border-color: var(--macaron-orange);
+    background: #FFF0E8;
 }
 
 #test-input {
@@ -561,7 +610,12 @@ header h1 {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     text-align: center;
+    border-top: 4px solid var(--macaron-pink);
 }
+
+.stat-card:nth-child(2) { border-top-color: var(--macaron-blue); }
+.stat-card:nth-child(3) { border-top-color: var(--macaron-purple); }
+.stat-card:nth-child(4) { border-top-color: var(--macaron-green); }
 
 .stat-card h3 {
     color: var(--dark-color);
@@ -572,8 +626,12 @@ header h1 {
 .stat-card p {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--macaron-pink);
 }
+
+.stat-card:nth-child(2) p { color: var(--macaron-blue); }
+.stat-card:nth-child(3) p { color: var(--macaron-purple); }
+.stat-card:nth-child(4) p { color: var(--macaron-green); }
 
 .chart-container {
     background: white;
@@ -604,7 +662,7 @@ header h1 {
 .import-section h3,
 .export-section h3 {
     margin-bottom: 15px;
-    color: var(--primary-color);
+    color: var(--macaron-purple);
 }
 
 .import-section p {
@@ -759,7 +817,7 @@ footer {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--macaron-pink);
     border-radius: 50%;
     border-top-color: transparent;
     animation: spin 1s linear infinite;

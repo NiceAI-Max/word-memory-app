@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     updateUI();
     initializeChart();
+    displayCards();
     
     // 检测是否在微信浏览器中
     const isWechat = /MicroMessenger/i.test(navigator.userAgent);
@@ -747,9 +748,13 @@ function displayCards() {
     
     container.innerHTML = '';
     
-    words.forEach(word => {
+    const macaronColors = ['macaron-pink', 'macaron-blue', 'macaron-green', 'macaron-purple', 
+                          'macaron-yellow', 'macaron-orange', 'macaron-mint', 'macaron-lavender'];
+    
+    words.forEach((word, index) => {
         const card = document.createElement('div');
-        card.className = 'card fade-in';
+        const randomColor = macaronColors[index % macaronColors.length];
+        card.className = `card fade-in ${randomColor}`;
         card.innerHTML = `
             <div class="card-header">
                 ${word.emoji ? `<div class="card-emoji">${word.emoji}</div>` : ''}
