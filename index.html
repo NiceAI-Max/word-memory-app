@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文单词记忆</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>英文单词记忆</h1>
+            <p class="subtitle">高效记忆，科学复习</p>
+        </header>
+        
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="add">单词录入</button>
+            <button class="tab-btn" data-tab="review">单词复习</button>
+            <button class="tab-btn" data-tab="cards">单词卡片</button>
+            <button class="tab-btn" data-tab="test">单词测试</button>
+            <button class="tab-btn" data-tab="stats">学习统计</button>
+            <button class="tab-btn" data-tab="import-export">导入导出</button>
+        </nav>
+        
+        <main class="content">
+            <!-- 单词录入 -->
+            <section id="add" class="tab-content active">
+                <h2>录入新单词</h2>
+                <form id="word-form">
+                    <div class="form-group">
+                        <label for="english">英文单词 *</label>
+                        <input type="text" id="english" required placeholder="请输入英文单词">
+                    </div>
+                    <div class="form-group">
+                        <label for="chinese">中文释义 *</label>
+                        <input type="text" id="chinese" required placeholder="请输入中文释义">
+                    </div>
+                    <div class="form-group">
+                        <label for="phonetic">音标</label>
+                        <input type="text" id="phonetic" placeholder="请输入音标">
+                    </div>
+                    <div class="form-group">
+                        <label for="part-of-speech">词性</label>
+                        <select id="part-of-speech">
+                            <option value="">请选择词性</option>
+                            <option value="n.">名词 (n.)</option>
+                            <option value="v.">动词 (v.)</option>
+                            <option value="adj.">形容词 (adj.)</option>
+                            <option value="adv.">副词 (adv.)</option>
+                            <option value="prep.">介词 (prep.)</option>
+                            <option value="conj.">连词 (conj.)</option>
+                            <option value="pron.">代词 (pron.)</option>
+                            <option value="int.">感叹词 (int.)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="example">例句</label>
+                        <textarea id="example" rows="3" placeholder="请输入例句"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">添加单词</button>
+                </form>
+                
+                <div class="word-list">
+                    <h3>已录入单词 <span id="word-count">0</span></h3>
+                    <div id="word-list-container"></div>
+                </div>
+            </section>
+            
+            <!-- 单词复习 -->
+            <section id="review" class="tab-content">
+                <h2>间隔重复复习</h2>
+                <div class="review-controls">
+                    <button id="start-review" class="btn primary">开始复习</button>
+                    <div class="review-stats">
+                        <span>待复习: <span id="review-pending">0</span></span>
+                        <span>已掌握: <span id="review-mastered">0</span></span>
+                    </div>
+                </div>
+                
+                <div id="review-area" class="hidden">
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="word-display">
+                                    <h3 id="review-english"></h3>
+                                    <p id="review-phonetic"></p>
+                                    <p id="review-pos"></p>
+                                </div>
+                                <button id="show-answer" class="btn secondary">显示答案</button>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="word-details">
+                                    <p id="review-chinese"></p>
+                                    <p id="review-example"></p>
+                                </div>
+                                <div class="rating-buttons">
+                                    <button class="btn rating" data-rating="1">不认识</button>
+                                    <button class="btn rating" data-rating="2">模糊</button>
+                                    <button class="btn rating" data-rating="3">认识</button>
+                                    <button class="btn rating" data-rating="4">熟悉</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="review-progress"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 单词卡片 -->
+            <section id="cards" class="tab-content">
+                <h2>单词卡片浏览</h2>
+                <div class="cards-controls">
+                    <button id="shuffle-cards" class="btn secondary">随机排序</button>
+                    <button id="show-all-cards" class="btn secondary">显示全部</button>
+                </div>
+                <div id="cards-container" class="cards-grid"></div>
+            </section>
+            
+            <!-- 单词测试 -->
+            <section id="test" class="tab-content">
+                <h2>单词测试</h2>
+                <div class="test-modes">
+                    <button class="btn mode-btn" data-mode="en-to-cn">英译中</button>
+                    <button class="btn mode-btn" data-mode="cn-to-en">中译英</button>
+                    <button class="btn mode-btn" data-mode="spelling">拼写测试</button>
+                </div>
+                
+                <div id="test-area" class="hidden">
+                    <div class="test-question">
+                        <p id="test-prompt"></p>
+                        <div id="test-options"></div>
+                        <input type="text" id="test-input" class="hidden" placeholder="请输入单词">
+                        <button id="test-submit" class="btn primary">确认</button>
+                    </div>
+                    <div class="test-feedback hidden">
+                        <p id="test-result"></p>
+                        <button id="next-question" class="btn primary">下一题</button>
+                    </div>
+                    <div class="test-progress">
+                        <span>进度: <span id="test-current">0</span>/<span id="test-total">0</span></span>
+                        <span>正确率: <span id="test-accuracy">0%</span></span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 学习统计 -->
+            <section id="stats" class="tab-content">
+                <h2>学习统计</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>总单词数</h3>
+                        <p id="total-words">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>已掌握</h3>
+                        <p id="mastered-words">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>待复习</h3>
+                        <p id="pending-words">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>今日学习</h3>
+                        <p id="today-learned">0</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>学习趋势</h3>
+                    <canvas id="learning-chart"></canvas>
+                </div>
+            </section>
+            
+            <!-- 导入导出 -->
+            <section id="import-export" class="tab-content">
+                <h2>导入导出</h2>
+                <div class="import-export-container">
+                    <div class="import-section">
+                        <h3>导入单词</h3>
+                        <p>支持CSV格式：英文,中文,音标,词性,例句</p>
+                        <input type="file" id="import-file" accept=".csv">
+                        <button id="import-btn" class="btn primary">导入</button>
+                    </div>
+                    <div class="export-section">
+                        <h3>导出单词</h3>
+                        <button id="export-csv" class="btn secondary">导出CSV</button>
+                        <button id="export-json" class="btn secondary">导出JSON</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>英文单词记忆应用 - 本地存储，数据不会上传</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
