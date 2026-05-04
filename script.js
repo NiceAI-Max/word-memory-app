@@ -10,6 +10,41 @@ let testTotal = 0;
 let learningHistory = [];
 let speechSynthesis = window.speechSynthesis;
 let autoPlaySound = true;
+let audioInitialized = false;
+
+// 初始化音频上下文（解决微信浏览器限制）
+function initAudio() {
+    // 创建一个空的音频上下文
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    
+    // 播放一个静音的音频来激活音频上下文
+    const silentBuffer = audioContext.createBuffer(1, 1, 22050);
+    const source = audioContext.createBufferSource();
+    source.buffer = silentBuffer;
+    source.connect(audioContext.destination);
+    source.start();
+    
+    // 尝试初始化语音合成
+    if (speechSynthesis) {
+        // 创建一个临时的语音来激活语音合成
+        const utterance = new SpeechSynthesisUtterance('');
+        utterance.volume = 0;
+        speechSynthesis.speak(utterance);
+        speechSynthesis.cancel();
+    }
+    
+    audioInitialized = true;
+    
+    // 隐藏初始化按钮
+    const initBtn = document.getElementById('init-audio');
+    if (initBtn) {
+        initBtn.textContent = '已准备就绪';
+        initBtn.disabled = true;
+        initBtn.style.background = '#4bb543';
+    }
+    
+    showMessage('音频已初始化，现在可以播放发音了！', 'success');
+}
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,6 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     updateUI();
     initializeChart();
+    
+    // 检测是否在微信浏览器中
+    const isWechat = /MicroMessenger/i.test(navigator.userAgent);
+    if (isWechat) {
+        // 微信浏览器需要用户交互才能播放音频
+        document.getElementById('init-audio').style.display = 'block';
+    }
 });
 
 // 从localStorage加载单词
@@ -510,6 +552,13 @@ function deleteWord(id) {
 function speakWord(text, lang = 'en-US') {
     if (!speechSynthesis) {
         showMessage('您的浏览器不支持语音合成', 'error');
+        return;
+    }
+    
+    // 检查是否在微信浏览器中且未初始化
+    const isWechat = /MicroMessenger/i.test(navigator.userAgent);
+    if (isWechat && !audioInitialized) {
+        showMessage('请点击"开始学习"按钮后再播放发音', 'info');
         return;
     }
     
