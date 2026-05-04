@@ -574,6 +574,14 @@ function speakWord(text, lang = 'en-US') {
     speechSynthesis.speak(utterance);
 }
 
+// 朗读例句
+function speakExample(btn) {
+    const text = btn.getAttribute('data-text');
+    if (text) {
+        speakWord(text, 'en-US');
+    }
+}
+
 // 切换自动播放声音
 function toggleAutoPlay() {
     autoPlaySound = !autoPlaySound;
@@ -755,6 +763,7 @@ function displayCards() {
         const card = document.createElement('div');
         const randomColor = macaronColors[index % macaronColors.length];
         card.className = `card fade-in ${randomColor}`;
+        const exampleHtml = word.example ? `<p><strong>例句:</strong> ${word.example} <button class="btn-icon sound-btn-sm" onclick="speakExample(this)" data-text="${word.example.replace(/"/g, '&quot;')}">🔊</button></p>` : '';
         card.innerHTML = `
             <div class="card-header">
                 ${word.emoji ? `<div class="card-emoji">${word.emoji}</div>` : ''}
@@ -765,7 +774,7 @@ function displayCards() {
             <div class="card-body">
                 <p><strong>中文释义:</strong> ${word.chinese}</p>
                 ${word.partOfSpeech ? `<p><strong>词性:</strong> ${word.partOfSpeech}</p>` : ''}
-                ${word.example ? `<p><strong>例句:</strong> ${word.example}</p>` : ''}
+                ${exampleHtml}
             </div>
             <div class="card-footer">
                 <small>复习次数: ${word.reviewCount} | 掌握程度: ${getMasteryLevel(word)}</small>

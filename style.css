@@ -364,12 +364,30 @@ header h1 {
 }
 
 .card-header .sound-btn {
-    background: rgba(67, 97, 238, 0.1);
+    background: rgba(255, 255, 255, 0.3);
     font-size: 1.3rem;
 }
 
 .card-header .sound-btn:hover {
-    background: rgba(67, 97, 238, 0.2);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.sound-btn-sm {
+    font-size: 1rem;
+    padding: 4px 8px;
+    background: var(--macaron-pink);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.sound-btn-sm:hover {
+    background: #FF9DB0;
+    transform: scale(1.1);
 }
 
 .word-details p {
