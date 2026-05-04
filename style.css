@@ -297,6 +297,32 @@ header h1 {
     padding: 15px 0;
 }
 
+.sound-btn {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.sound-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.card-header .sound-btn {
+    background: rgba(67, 97, 238, 0.1);
+    font-size: 1.3rem;
+}
+
+.card-header .sound-btn:hover {
+    background: rgba(67, 97, 238, 0.2);
+}
+
 .word-details p {
     font-size: 1.3rem;
     margin-bottom: 15px;

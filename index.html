@@ -78,6 +78,7 @@
                     <div class="review-stats">
                         <span>待复习: <span id="review-pending">0</span></span>
                         <span>已掌握: <span id="review-mastered">0</span></span>
+                        <button id="auto-play-toggle" class="btn secondary" onclick="toggleAutoPlay()">🔊 自动播放</button>
                     </div>
                 </div>
                 
@@ -90,6 +91,7 @@
                                     <h3 id="review-english"></h3>
                                     <p id="review-phonetic"></p>
                                     <p id="review-pos"></p>
+                                    <button class="btn-icon sound-btn" onclick="speakWord(document.getElementById('review-english').textContent)">🔊</button>
                                 </div>
                                 <button id="show-answer" class="btn secondary">显示答案</button>
                             </div>

@@ -8,6 +8,8 @@ let currentTestIndex = 0;
 let testCorrect = 0;
 let testTotal = 0;
 let learningHistory = [];
+let speechSynthesis = window.speechSynthesis;
+let autoPlaySound = true;
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
@@ -504,6 +506,33 @@ function deleteWord(id) {
     showMessage('单词已删除', 'info');
 }
 
+// 朗读单词
+function speakWord(text, lang = 'en-US') {
+    if (!speechSynthesis) {
+        showMessage('您的浏览器不支持语音合成', 'error');
+        return;
+    }
+    
+    // 取消之前的朗读
+    speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = 0.8; // 语速稍慢，适合小朋友
+    utterance.pitch = 1.1; // 音调稍高，更适合小朋友
+    
+    speechSynthesis.speak(utterance);
+}
+
+// 切换自动播放声音
+function toggleAutoPlay() {
+    autoPlaySound = !autoPlaySound;
+    const btn = document.getElementById('auto-play-toggle');
+    if (btn) {
+        btn.textContent = autoPlaySound ? '🔊 自动播放' : '🔇 静音';
+    }
+}
+
 // 开始复习
 function startReview() {
     const now = new Date();
@@ -551,6 +580,11 @@ function showReviewCard() {
     
     // 重置卡片状态
     document.querySelector('.flashcard-inner').classList.remove('flipped');
+    
+    // 自动朗读单词
+    if (autoPlaySound) {
+        setTimeout(() => speakWord(word.english), 300);
+    }
     
     // 更新进度
     updateReviewProgress();
@@ -672,6 +706,7 @@ function displayCards() {
                 ${word.emoji ? `<div class="card-emoji">${word.emoji}</div>` : ''}
                 <h3>${word.english}</h3>
                 ${word.phonetic ? `<p>/${word.phonetic}/</p>` : ''}
+                <button class="btn-icon sound-btn" onclick="speakWord('${word.english}')">🔊</button>
             </div>
             <div class="card-body">
                 <p><strong>中文释义:</strong> ${word.chinese}</p>
