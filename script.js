@@ -35,127 +35,127 @@ function loadWords() {
 function addPresetWords() {
     const presetWords = [
         // 动物 (15个)
-        { english: "cat", chinese: "猫", phonetic: "/kæt/", partOfSpeech: "n.", example: "The cat is cute." },
-        { english: "dog", chinese: "狗", phonetic: "/dɒɡ/", partOfSpeech: "n.", example: "I have a dog." },
-        { english: "bird", chinese: "鸟", phonetic: "/bɜːd/", partOfSpeech: "n.", example: "The bird can fly." },
-        { english: "fish", chinese: "鱼", phonetic: "/fɪʃ/", partOfSpeech: "n.", example: "The fish swims." },
-        { english: "duck", chinese: "鸭子", phonetic: "/dʌk/", partOfSpeech: "n.", example: "The duck says quack." },
-        { english: "rabbit", chinese: "兔子", phonetic: "/ˈræb.ɪt/", partOfSpeech: "n.", example: "The rabbit is white." },
-        { english: "bear", chinese: "熊", phonetic: "/beə/", partOfSpeech: "n.", example: "The bear is big." },
-        { english: "monkey", chinese: "猴子", phonetic: "/ˈmʌŋ.ki/", partOfSpeech: "n.", example: "The monkey likes bananas." },
-        { english: "pig", chinese: "猪", phonetic: "/pɪɡ/", partOfSpeech: "n.", example: "The pig is pink." },
-        { english: "cow", chinese: "牛", phonetic: "/kaʊ/", partOfSpeech: "n.", example: "The cow says moo." },
-        { english: "horse", chinese: "马", phonetic: "/hɔːs/", partOfSpeech: "n.", example: "The horse can run." },
-        { english: "elephant", chinese: "大象", phonetic: "/ˈel.ɪ.fənt/", partOfSpeech: "n.", example: "The elephant is big." },
-        { english: "lion", chinese: "狮子", phonetic: "/ˈlaɪ.ən/", partOfSpeech: "n.", example: "The lion is strong." },
-        { english: "tiger", chinese: "老虎", phonetic: "/ˈtaɪ.ɡə/", partOfSpeech: "n.", example: "The tiger has stripes." },
-        { english: "panda", chinese: "熊猫", phonetic: "/ˈpæn.də/", partOfSpeech: "n.", example: "The panda eats bamboo." },
+        { english: "cat", chinese: "猫", phonetic: "/kæt/", partOfSpeech: "n.", example: "The cat is cute.", emoji: "🐱" },
+        { english: "dog", chinese: "狗", phonetic: "/dɒɡ/", partOfSpeech: "n.", example: "I have a dog.", emoji: "🐶" },
+        { english: "bird", chinese: "鸟", phonetic: "/bɜːd/", partOfSpeech: "n.", example: "The bird can fly.", emoji: "🐦" },
+        { english: "fish", chinese: "鱼", phonetic: "/fɪʃ/", partOfSpeech: "n.", example: "The fish swims.", emoji: "🐟" },
+        { english: "duck", chinese: "鸭子", phonetic: "/dʌk/", partOfSpeech: "n.", example: "The duck says quack.", emoji: "🦆" },
+        { english: "rabbit", chinese: "兔子", phonetic: "/ˈræb.ɪt/", partOfSpeech: "n.", example: "The rabbit is white.", emoji: "🐰" },
+        { english: "bear", chinese: "熊", phonetic: "/beə/", partOfSpeech: "n.", example: "The bear is big.", emoji: "🐻" },
+        { english: "monkey", chinese: "猴子", phonetic: "/ˈmʌŋ.ki/", partOfSpeech: "n.", example: "The monkey likes bananas.", emoji: "🐵" },
+        { english: "pig", chinese: "猪", phonetic: "/pɪɡ/", partOfSpeech: "n.", example: "The pig is pink.", emoji: "🐷" },
+        { english: "cow", chinese: "牛", phonetic: "/kaʊ/", partOfSpeech: "n.", example: "The cow says moo.", emoji: "🐮" },
+        { english: "horse", chinese: "马", phonetic: "/hɔːs/", partOfSpeech: "n.", example: "The horse can run.", emoji: "🐴" },
+        { english: "elephant", chinese: "大象", phonetic: "/ˈel.ɪ.fənt/", partOfSpeech: "n.", example: "The elephant is big.", emoji: "🐘" },
+        { english: "lion", chinese: "狮子", phonetic: "/ˈlaɪ.ən/", partOfSpeech: "n.", example: "The lion is strong.", emoji: "🦁" },
+        { english: "tiger", chinese: "老虎", phonetic: "/ˈtaɪ.ɡə/", partOfSpeech: "n.", example: "The tiger has stripes.", emoji: "🐯" },
+        { english: "panda", chinese: "熊猫", phonetic: "/ˈpæn.də/", partOfSpeech: "n.", example: "The panda eats bamboo.", emoji: "🐼" },
         
         // 颜色 (8个)
-        { english: "red", chinese: "红色", phonetic: "/red/", partOfSpeech: "adj.", example: "The apple is red." },
-        { english: "blue", chinese: "蓝色", phonetic: "/bluː/", partOfSpeech: "adj.", example: "The sky is blue." },
-        { english: "yellow", chinese: "黄色", phonetic: "/ˈjel.əʊ/", partOfSpeech: "adj.", example: "The banana is yellow." },
-        { english: "green", chinese: "绿色", phonetic: "/ɡriːn/", partOfSpeech: "adj.", example: "The grass is green." },
-        { english: "pink", chinese: "粉色", phonetic: "/pɪŋk/", partOfSpeech: "adj.", example: "I like pink." },
-        { english: "white", chinese: "白色", phonetic: "/waɪt/", partOfSpeech: "adj.", example: "The snow is white." },
-        { english: "black", chinese: "黑色", phonetic: "/blæk/", partOfSpeech: "adj.", example: "The cat is black." },
-        { english: "orange", chinese: "橙色", phonetic: "/ˈɒr.ɪndʒ/", partOfSpeech: "adj.", example: "The orange is orange." },
+        { english: "red", chinese: "红色", phonetic: "/red/", partOfSpeech: "adj.", example: "The apple is red.", emoji: "🔴" },
+        { english: "blue", chinese: "蓝色", phonetic: "/bluː/", partOfSpeech: "adj.", example: "The sky is blue.", emoji: "🔵" },
+        { english: "yellow", chinese: "黄色", phonetic: "/ˈjel.əʊ/", partOfSpeech: "adj.", example: "The banana is yellow.", emoji: "🟡" },
+        { english: "green", chinese: "绿色", phonetic: "/ɡriːn/", partOfSpeech: "adj.", example: "The grass is green.", emoji: "🟢" },
+        { english: "pink", chinese: "粉色", phonetic: "/pɪŋk/", partOfSpeech: "adj.", example: "I like pink.", emoji: "🌸" },
+        { english: "white", chinese: "白色", phonetic: "/waɪt/", partOfSpeech: "adj.", example: "The snow is white.", emoji: "⚪" },
+        { english: "black", chinese: "黑色", phonetic: "/blæk/", partOfSpeech: "adj.", example: "The cat is black.", emoji: "⚫" },
+        { english: "orange", chinese: "橙色", phonetic: "/ˈɒr.ɪndʒ/", partOfSpeech: "adj.", example: "The orange is orange.", emoji: "🟠" },
         
         // 数字 (10个)
-        { english: "one", chinese: "一", phonetic: "/wʌn/", partOfSpeech: "num.", example: "I have one apple." },
-        { english: "two", chinese: "二", phonetic: "/tuː/", partOfSpeech: "num.", example: "I have two eyes." },
-        { english: "three", chinese: "三", phonetic: "/θriː/", partOfSpeech: "num.", example: "I am three years old." },
-        { english: "four", chinese: "四", phonetic: "/fɔː/", partOfSpeech: "num.", example: "I have four legs." },
-        { english: "five", chinese: "五", phonetic: "/faɪv/", partOfSpeech: "num.", example: "I have five fingers." },
-        { english: "six", chinese: "六", phonetic: "/sɪks/", partOfSpeech: "num.", example: "I am six years old." },
-        { english: "seven", chinese: "七", phonetic: "/ˈsev.ən/", partOfSpeech: "num.", example: "There are seven days." },
-        { english: "eight", chinese: "八", phonetic: "/eɪt/", partOfSpeech: "num.", example: "I have eight toys." },
-        { english: "nine", chinese: "九", phonetic: "/naɪn/", partOfSpeech: "num.", example: "I am nine years old." },
-        { english: "ten", chinese: "十", phonetic: "/ten/", partOfSpeech: "num.", example: "I can count to ten." },
+        { english: "one", chinese: "一", phonetic: "/wʌn/", partOfSpeech: "num.", example: "I have one apple.", emoji: "1️⃣" },
+        { english: "two", chinese: "二", phonetic: "/tuː/", partOfSpeech: "num.", example: "I have two eyes.", emoji: "2️⃣" },
+        { english: "three", chinese: "三", phonetic: "/θriː/", partOfSpeech: "num.", example: "I am three years old.", emoji: "3️⃣" },
+        { english: "four", chinese: "四", phonetic: "/fɔː/", partOfSpeech: "num.", example: "I have four legs.", emoji: "4️⃣" },
+        { english: "five", chinese: "五", phonetic: "/faɪv/", partOfSpeech: "num.", example: "I have five fingers.", emoji: "5️⃣" },
+        { english: "six", chinese: "六", phonetic: "/sɪks/", partOfSpeech: "num.", example: "I am six years old.", emoji: "6️⃣" },
+        { english: "seven", chinese: "七", phonetic: "/ˈsev.ən/", partOfSpeech: "num.", example: "There are seven days.", emoji: "7️⃣" },
+        { english: "eight", chinese: "八", phonetic: "/eɪt/", partOfSpeech: "num.", example: "I have eight toys.", emoji: "8️⃣" },
+        { english: "nine", chinese: "九", phonetic: "/naɪn/", partOfSpeech: "num.", example: "I am nine years old.", emoji: "9️⃣" },
+        { english: "ten", chinese: "十", phonetic: "/ten/", partOfSpeech: "num.", example: "I can count to ten.", emoji: "🔟" },
         
         // 身体部位 (10个)
-        { english: "head", chinese: "头", phonetic: "/hed/", partOfSpeech: "n.", example: "I nod my head." },
-        { english: "eye", chinese: "眼睛", phonetic: "/aɪ/", partOfSpeech: "n.", example: "I have two eyes." },
-        { english: "ear", chinese: "耳朵", phonetic: "/ɪə/", partOfSpeech: "n.", example: "I hear with my ears." },
-        { english: "nose", chinese: "鼻子", phonetic: "/nəʊz/", partOfSpeech: "n.", example: "I smell with my nose." },
-        { english: "mouth", chinese: "嘴巴", phonetic: "/maʊθ/", partOfSpeech: "n.", example: "I eat with my mouth." },
-        { english: "hand", chinese: "手", phonetic: "/hænd/", partOfSpeech: "n.", example: "I wave my hand." },
-        { english: "foot", chinese: "脚", phonetic: "/fʊt/", partOfSpeech: "n.", example: "I kick with my foot." },
-        { english: "arm", chinese: "胳膊", phonetic: "/ɑːm/", partOfSpeech: "n.", example: "I hug with my arms." },
-        { english: "leg", chinese: "腿", phonetic: "/leɡ/", partOfSpeech: "n.", example: "I have two legs." },
-        { english: "face", chinese: "脸", phonetic: "/feɪs/", partOfSpeech: "n.", example: "I wash my face." },
+        { english: "head", chinese: "头", phonetic: "/hed/", partOfSpeech: "n.", example: "I nod my head.", emoji: "😊" },
+        { english: "eye", chinese: "眼睛", phonetic: "/aɪ/", partOfSpeech: "n.", example: "I have two eyes.", emoji: "👀" },
+        { english: "ear", chinese: "耳朵", phonetic: "/ɪə/", partOfSpeech: "n.", example: "I hear with my ears.", emoji: "👂" },
+        { english: "nose", chinese: "鼻子", phonetic: "/nəʊz/", partOfSpeech: "n.", example: "I smell with my nose.", emoji: "👃" },
+        { english: "mouth", chinese: "嘴巴", phonetic: "/maʊθ/", partOfSpeech: "n.", example: "I eat with my mouth.", emoji: "👄" },
+        { english: "hand", chinese: "手", phonetic: "/hænd/", partOfSpeech: "n.", example: "I wave my hand.", emoji: "🤚" },
+        { english: "foot", chinese: "脚", phonetic: "/fʊt/", partOfSpeech: "n.", example: "I kick with my foot.", emoji: "🦶" },
+        { english: "arm", chinese: "胳膊", phonetic: "/ɑːm/", partOfSpeech: "n.", example: "I hug with my arms.", emoji: "💪" },
+        { english: "leg", chinese: "腿", phonetic: "/leɡ/", partOfSpeech: "n.", example: "I have two legs.", emoji: "🦵" },
+        { english: "face", chinese: "脸", phonetic: "/feɪs/", partOfSpeech: "n.", example: "I wash my face.", emoji: "😊" },
         
         // 家庭 (6个)
-        { english: "mom", chinese: "妈妈", phonetic: "/mɒm/", partOfSpeech: "n.", example: "I love my mom." },
-        { english: "dad", chinese: "爸爸", phonetic: "/dæd/", partOfSpeech: "n.", example: "My dad is tall." },
-        { english: "baby", chinese: "宝宝", phonetic: "/ˈbeɪ.bi/", partOfSpeech: "n.", example: "The baby is cute." },
-        { english: "sister", chinese: "姐姐", phonetic: "/ˈsɪs.tə/", partOfSpeech: "n.", example: "My sister is nice." },
-        { english: "brother", chinese: "哥哥", phonetic: "/ˈbrʌð.ə/", partOfSpeech: "n.", example: "My brother is big." },
-        { english: "family", chinese: "家人", phonetic: "/ˈfæm.əl.i/", partOfSpeech: "n.", example: "I love my family." },
+        { english: "mom", chinese: "妈妈", phonetic: "/mɒm/", partOfSpeech: "n.", example: "I love my mom.", emoji: "👩" },
+        { english: "dad", chinese: "爸爸", phonetic: "/dæd/", partOfSpeech: "n.", example: "My dad is tall.", emoji: "👨" },
+        { english: "baby", chinese: "宝宝", phonetic: "/ˈbeɪ.bi/", partOfSpeech: "n.", example: "The baby is cute.", emoji: "👶" },
+        { english: "sister", chinese: "姐姐", phonetic: "/ˈsɪs.tə/", partOfSpeech: "n.", example: "My sister is nice.", emoji: "👧" },
+        { english: "brother", chinese: "哥哥", phonetic: "/ˈbrʌð.ə/", partOfSpeech: "n.", example: "My brother is big.", emoji: "👦" },
+        { english: "family", chinese: "家人", phonetic: "/ˈfæm.əl.i/", partOfSpeech: "n.", example: "I love my family.", emoji: "👨‍👩‍👧‍👦" },
         
         // 食物 (12个)
-        { english: "apple", chinese: "苹果", phonetic: "/ˈæp.əl/", partOfSpeech: "n.", example: "I like apples." },
-        { english: "banana", chinese: "香蕉", phonetic: "/bəˈnæn.ə/", partOfSpeech: "n.", example: "The banana is yellow." },
-        { english: "milk", chinese: "牛奶", phonetic: "/mɪlk/", partOfSpeech: "n.", example: "I drink milk." },
-        { english: "water", chinese: "水", phonetic: "/ˈwɔː.tə/", partOfSpeech: "n.", example: "I drink water." },
-        { english: "bread", chinese: "面包", phonetic: "/bred/", partOfSpeech: "n.", example: "I eat bread." },
-        { english: "cake", chinese: "蛋糕", phonetic: "/keɪk/", partOfSpeech: "n.", example: "I like cake." },
-        { english: "egg", chinese: "鸡蛋", phonetic: "/eɡ/", partOfSpeech: "n.", example: "I eat an egg." },
-        { english: "rice", chinese: "米饭", phonetic: "/raɪs/", partOfSpeech: "n.", example: "I eat rice." },
-        { english: "candy", chinese: "糖果", phonetic: "/ˈkæn.di/", partOfSpeech: "n.", example: "I like candy." },
-        { english: "cookie", chinese: "饼干", phonetic: "/ˈkʊk.i/", partOfSpeech: "n.", example: "I eat a cookie." },
-        { english: "grape", chinese: "葡萄", phonetic: "/ɡreɪp/", partOfSpeech: "n.", example: "I like grapes." },
-        { english: "strawberry", chinese: "草莓", phonetic: "/ˈstrɔː.bər.i/", partOfSpeech: "n.", example: "The strawberry is red." },
+        { english: "apple", chinese: "苹果", phonetic: "/ˈæp.əl/", partOfSpeech: "n.", example: "I like apples.", emoji: "🍎" },
+        { english: "banana", chinese: "香蕉", phonetic: "/bəˈnæn.ə/", partOfSpeech: "n.", example: "The banana is yellow.", emoji: "🍌" },
+        { english: "milk", chinese: "牛奶", phonetic: "/mɪlk/", partOfSpeech: "n.", example: "I drink milk.", emoji: "🥛" },
+        { english: "water", chinese: "水", phonetic: "/ˈwɔː.tə/", partOfSpeech: "n.", example: "I drink water.", emoji: "💧" },
+        { english: "bread", chinese: "面包", phonetic: "/bred/", partOfSpeech: "n.", example: "I eat bread.", emoji: "🍞" },
+        { english: "cake", chinese: "蛋糕", phonetic: "/keɪk/", partOfSpeech: "n.", example: "I like cake.", emoji: "🎂" },
+        { english: "egg", chinese: "鸡蛋", phonetic: "/eɡ/", partOfSpeech: "n.", example: "I eat an egg.", emoji: "🥚" },
+        { english: "rice", chinese: "米饭", phonetic: "/raɪs/", partOfSpeech: "n.", example: "I eat rice.", emoji: "🍚" },
+        { english: "candy", chinese: "糖果", phonetic: "/ˈkæn.di/", partOfSpeech: "n.", example: "I like candy.", emoji: "🍬" },
+        { english: "cookie", chinese: "饼干", phonetic: "/ˈkʊk.i/", partOfSpeech: "n.", example: "I eat a cookie.", emoji: "🍪" },
+        { english: "grape", chinese: "葡萄", phonetic: "/ɡreɪp/", partOfSpeech: "n.", example: "I like grapes.", emoji: "🍇" },
+        { english: "strawberry", chinese: "草莓", phonetic: "/ˈstrɔː.bər.i/", partOfSpeech: "n.", example: "The strawberry is red.", emoji: "🍓" },
         
         // 物品 (12个)
-        { english: "book", chinese: "书", phonetic: "/bʊk/", partOfSpeech: "n.", example: "I read a book." },
-        { english: "pen", chinese: "笔", phonetic: "/pen/", partOfSpeech: "n.", example: "I write with a pen." },
-        { english: "ball", chinese: "球", phonetic: "/bɔːl/", partOfSpeech: "n.", example: "I play with a ball." },
-        { english: "toy", chinese: "玩具", phonetic: "/tɔɪ/", partOfSpeech: "n.", example: "I like my toy." },
-        { english: "car", chinese: "汽车", phonetic: "/kɑː/", partOfSpeech: "n.", example: "The car is fast." },
-        { english: "bus", chinese: "公交车", phonetic: "/bʌs/", partOfSpeech: "n.", example: "I ride the bus." },
-        { english: "house", chinese: "房子", phonetic: "/haʊs/", partOfSpeech: "n.", example: "I live in a house." },
-        { english: "door", chinese: "门", phonetic: "/dɔː/", partOfSpeech: "n.", example: "Open the door." },
-        { english: "bed", chinese: "床", phonetic: "/bed/", partOfSpeech: "n.", example: "I sleep in my bed." },
-        { english: "cup", chinese: "杯子", phonetic: "/kʌp/", partOfSpeech: "n.", example: "I drink from a cup." },
-        { english: "shoe", chinese: "鞋子", phonetic: "/ʃuː/", partOfSpeech: "n.", example: "I wear shoes." },
-        { english: "hat", chinese: "帽子", phonetic: "/hæt/", partOfSpeech: "n.", example: "I wear a hat." },
+        { english: "book", chinese: "书", phonetic: "/bʊk/", partOfSpeech: "n.", example: "I read a book.", emoji: "📖" },
+        { english: "pen", chinese: "笔", phonetic: "/pen/", partOfSpeech: "n.", example: "I write with a pen.", emoji: "✏️" },
+        { english: "ball", chinese: "球", phonetic: "/bɔːl/", partOfSpeech: "n.", example: "I play with a ball.", emoji: "⚽" },
+        { english: "toy", chinese: "玩具", phonetic: "/tɔɪ/", partOfSpeech: "n.", example: "I like my toy.", emoji: "🧸" },
+        { english: "car", chinese: "汽车", phonetic: "/kɑː/", partOfSpeech: "n.", example: "The car is fast.", emoji: "🚗" },
+        { english: "bus", chinese: "公交车", phonetic: "/bʌs/", partOfSpeech: "n.", example: "I ride the bus.", emoji: "🚌" },
+        { english: "house", chinese: "房子", phonetic: "/haʊs/", partOfSpeech: "n.", example: "I live in a house.", emoji: "🏠" },
+        { english: "door", chinese: "门", phonetic: "/dɔː/", partOfSpeech: "n.", example: "Open the door.", emoji: "🚪" },
+        { english: "bed", chinese: "床", phonetic: "/bed/", partOfSpeech: "n.", example: "I sleep in my bed.", emoji: "🛏️" },
+        { english: "cup", chinese: "杯子", phonetic: "/kʌp/", partOfSpeech: "n.", example: "I drink from a cup.", emoji: "🥤" },
+        { english: "shoe", chinese: "鞋子", phonetic: "/ʃuː/", partOfSpeech: "n.", example: "I wear shoes.", emoji: "👟" },
+        { english: "hat", chinese: "帽子", phonetic: "/hæt/", partOfSpeech: "n.", example: "I wear a hat.", emoji: "🧢" },
         
         // 自然 (6个)
-        { english: "sun", chinese: "太阳", phonetic: "/sʌn/", partOfSpeech: "n.", example: "The sun is bright." },
-        { english: "moon", chinese: "月亮", phonetic: "/muːn/", partOfSpeech: "n.", example: "The moon is at night." },
-        { english: "star", chinese: "星星", phonetic: "/stɑː/", partOfSpeech: "n.", example: "I see a star." },
-        { english: "tree", chinese: "树", phonetic: "/triː/", partOfSpeech: "n.", example: "The tree is tall." },
-        { english: "flower", chinese: "花", phonetic: "/ˈflaʊ.ə/", partOfSpeech: "n.", example: "The flower is pretty." },
-        { english: "sky", chinese: "天空", phonetic: "/skaɪ/", partOfSpeech: "n.", example: "The sky is blue." },
+        { english: "sun", chinese: "太阳", phonetic: "/sʌn/", partOfSpeech: "n.", example: "The sun is bright.", emoji: "☀️" },
+        { english: "moon", chinese: "月亮", phonetic: "/muːn/", partOfSpeech: "n.", example: "The moon is at night.", emoji: "🌙" },
+        { english: "star", chinese: "星星", phonetic: "/stɑː/", partOfSpeech: "n.", example: "I see a star.", emoji: "⭐" },
+        { english: "tree", chinese: "树", phonetic: "/triː/", partOfSpeech: "n.", example: "The tree is tall.", emoji: "🌳" },
+        { english: "flower", chinese: "花", phonetic: "/ˈflaʊ.ə/", partOfSpeech: "n.", example: "The flower is pretty.", emoji: "🌸" },
+        { english: "sky", chinese: "天空", phonetic: "/skaɪ/", partOfSpeech: "n.", example: "The sky is blue.", emoji: "🌤️" },
         
         // 动作 (10个)
-        { english: "eat", chinese: "吃", phonetic: "/iːt/", partOfSpeech: "v.", example: "I eat food." },
-        { english: "drink", chinese: "喝", phonetic: "/drɪŋk/", partOfSpeech: "v.", example: "I drink water." },
-        { english: "sleep", chinese: "睡觉", phonetic: "/sliːp/", partOfSpeech: "v.", example: "I sleep at night." },
-        { english: "run", chinese: "跑", phonetic: "/rʌn/", partOfSpeech: "v.", example: "I can run fast." },
-        { english: "walk", chinese: "走", phonetic: "/wɔːk/", partOfSpeech: "v.", example: "I walk to school." },
-        { english: "jump", chinese: "跳", phonetic: "/dʒʌmp/", partOfSpeech: "v.", example: "I can jump high." },
-        { english: "sit", chinese: "坐", phonetic: "/sɪt/", partOfSpeech: "v.", example: "I sit down." },
-        { english: "stand", chinese: "站", phonetic: "/stænd/", partOfSpeech: "v.", example: "I stand up." },
-        { english: "sing", chinese: "唱歌", phonetic: "/sɪŋ/", partOfSpeech: "v.", example: "I like to sing." },
-        { english: "play", chinese: "玩", phonetic: "/pleɪ/", partOfSpeech: "v.", example: "I like to play." },
+        { english: "eat", chinese: "吃", phonetic: "/iːt/", partOfSpeech: "v.", example: "I eat food.", emoji: "🍽️" },
+        { english: "drink", chinese: "喝", phonetic: "/drɪŋk/", partOfSpeech: "v.", example: "I drink water.", emoji: "🥤" },
+        { english: "sleep", chinese: "睡觉", phonetic: "/sliːp/", partOfSpeech: "v.", example: "I sleep at night.", emoji: "😴" },
+        { english: "run", chinese: "跑", phonetic: "/rʌn/", partOfSpeech: "v.", example: "I can run fast.", emoji: "🏃" },
+        { english: "walk", chinese: "走", phonetic: "/wɔːk/", partOfSpeech: "v.", example: "I walk to school.", emoji: "🚶" },
+        { english: "jump", chinese: "跳", phonetic: "/dʒʌmp/", partOfSpeech: "v.", example: "I can jump high.", emoji: "🦘" },
+        { english: "sit", chinese: "坐", phonetic: "/sɪt/", partOfSpeech: "v.", example: "I sit down.", emoji: "🪑" },
+        { english: "stand", chinese: "站", phonetic: "/stænd/", partOfSpeech: "v.", example: "I stand up.", emoji: "🧍" },
+        { english: "sing", chinese: "唱歌", phonetic: "/sɪŋ/", partOfSpeech: "v.", example: "I like to sing.", emoji: "🎤" },
+        { english: "play", chinese: "玩", phonetic: "/pleɪ/", partOfSpeech: "v.", example: "I like to play.", emoji: "🎮" },
         
         // 形容词 (8个)
-        { english: "big", chinese: "大", phonetic: "/bɪɡ/", partOfSpeech: "adj.", example: "The elephant is big." },
-        { english: "small", chinese: "小", phonetic: "/smɔːl/", partOfSpeech: "adj.", example: "The mouse is small." },
-        { english: "happy", chinese: "快乐", phonetic: "/ˈhæp.i/", partOfSpeech: "adj.", example: "I am happy." },
-        { english: "sad", chinese: "伤心", phonetic: "/sæd/", partOfSpeech: "adj.", example: "She is sad." },
-        { english: "good", chinese: "好", phonetic: "/ɡʊd/", partOfSpeech: "adj.", example: "You are good." },
-        { english: "hot", chinese: "热", phonetic: "/hɒt/", partOfSpeech: "adj.", example: "It is hot today." },
-        { english: "cold", chinese: "冷", phonetic: "/kəʊld/", partOfSpeech: "adj.", example: "It is cold outside." },
-        { english: "pretty", chinese: "漂亮", phonetic: "/ˈprɪt.i/", partOfSpeech: "adj.", example: "The flower is pretty." },
+        { english: "big", chinese: "大", phonetic: "/bɪɡ/", partOfSpeech: "adj.", example: "The elephant is big.", emoji: "🐘" },
+        { english: "small", chinese: "小", phonetic: "/smɔːl/", partOfSpeech: "adj.", example: "The mouse is small.", emoji: "🐁" },
+        { english: "happy", chinese: "快乐", phonetic: "/ˈhæp.i/", partOfSpeech: "adj.", example: "I am happy.", emoji: "😊" },
+        { english: "sad", chinese: "伤心", phonetic: "/sæd/", partOfSpeech: "adj.", example: "She is sad.", emoji: "😢" },
+        { english: "good", chinese: "好", phonetic: "/ɡʊd/", partOfSpeech: "adj.", example: "You are good.", emoji: "👍" },
+        { english: "hot", chinese: "热", phonetic: "/hɒt/", partOfSpeech: "adj.", example: "It is hot today.", emoji: "🔥" },
+        { english: "cold", chinese: "冷", phonetic: "/kəʊld/", partOfSpeech: "adj.", example: "It is cold outside.", emoji: "❄️" },
+        { english: "pretty", chinese: "漂亮", phonetic: "/ˈprɪt.i/", partOfSpeech: "adj.", example: "The flower is pretty.", emoji: "✨" },
         
         // 方位/问候 (4个)
-        { english: "up", chinese: "上", phonetic: "/ʌp/", partOfSpeech: "adv.", example: "Look up." },
-        { english: "down", chinese: "下", phonetic: "/daʊn/", partOfSpeech: "adv.", example: "Sit down." },
-        { english: "hello", chinese: "你好", phonetic: "/heˈləʊ/", partOfSpeech: "int.", example: "Hello, how are you?" },
-        { english: "thank you", chinese: "谢谢", phonetic: "/θæŋk juː/", partOfSpeech: "phrase", example: "Thank you very much." }
+        { english: "up", chinese: "上", phonetic: "/ʌp/", partOfSpeech: "adv.", example: "Look up.", emoji: "⬆️" },
+        { english: "down", chinese: "下", phonetic: "/daʊn/", partOfSpeech: "adv.", example: "Sit down.", emoji: "⬇️" },
+        { english: "hello", chinese: "你好", phonetic: "/heˈləʊ/", partOfSpeech: "int.", example: "Hello, how are you?", emoji: "👋" },
+        { english: "thank you", chinese: "谢谢", phonetic: "/θæŋk juː/", partOfSpeech: "phrase", example: "Thank you very much.", emoji: "🙏" }
     ];
     
     presetWords.forEach((wordData, index) => {
@@ -166,6 +166,7 @@ function addPresetWords() {
             phonetic: wordData.phonetic,
             partOfSpeech: wordData.partOfSpeech,
             example: wordData.example,
+            emoji: wordData.emoji || '',
             createdAt: new Date().toISOString(),
             lastReviewed: null,
             nextReview: new Date().toISOString(),
@@ -303,6 +304,7 @@ function addWord() {
     const phonetic = document.getElementById('phonetic').value.trim();
     const partOfSpeech = document.getElementById('part-of-speech').value;
     const example = document.getElementById('example').value.trim();
+    const emoji = document.getElementById('emoji') ? document.getElementById('emoji').value.trim() : '';
     
     if (!english || !chinese) {
         alert('请输入英文单词和中文释义');
@@ -323,6 +325,7 @@ function addWord() {
         phonetic: phonetic,
         partOfSpeech: partOfSpeech,
         example: example,
+        emoji: emoji,
         createdAt: new Date().toISOString(),
         lastReviewed: null,
         nextReview: new Date().toISOString(),
@@ -477,12 +480,14 @@ function editWord(id) {
     const newPhonetic = prompt('请输入音标:', word.phonetic || '');
     const newPartOfSpeech = prompt('请输入词性:', word.partOfSpeech || '');
     const newExample = prompt('请输入例句:', word.example || '');
+    const newEmoji = prompt('请输入Emoji图片:', word.emoji || '');
     
     word.english = newEnglish.trim() || word.english;
     word.chinese = newChinese.trim() || word.chinese;
     word.phonetic = newPhonetic ? newPhonetic.trim() : word.phonetic;
     word.partOfSpeech = newPartOfSpeech ? newPartOfSpeech.trim() : word.partOfSpeech;
     word.example = newExample ? newExample.trim() : word.example;
+    word.emoji = newEmoji ? newEmoji.trim() : word.emoji;
     
     saveWords();
     updateUI();
@@ -535,6 +540,7 @@ function showReviewCard() {
     const word = reviewQueue[currentReviewIndex];
     
     // 更新正面
+    document.getElementById('review-emoji').textContent = word.emoji || '';
     document.getElementById('review-english').textContent = word.english;
     document.getElementById('review-phonetic').textContent = word.phonetic ? `/${word.phonetic}/` : '';
     document.getElementById('review-pos').textContent = word.partOfSpeech || '';
@@ -663,6 +669,7 @@ function displayCards() {
         card.className = 'card fade-in';
         card.innerHTML = `
             <div class="card-header">
+                ${word.emoji ? `<div class="card-emoji">${word.emoji}</div>` : ''}
                 <h3>${word.english}</h3>
                 ${word.phonetic ? `<p>/${word.phonetic}/</p>` : ''}
             </div>
@@ -1072,6 +1079,7 @@ function importCSV(content) {
                 phonetic: parts[2] || '',
                 partOfSpeech: parts[3] || '',
                 example: parts[4] || '',
+                emoji: parts[5] || '',
                 createdAt: new Date().toISOString(),
                 lastReviewed: null,
                 nextReview: new Date().toISOString(),
@@ -1110,6 +1118,7 @@ function importJSON(content) {
                     phonetic: word.phonetic || '',
                     partOfSpeech: word.partOfSpeech || '',
                     example: word.example || '',
+                    emoji: word.emoji || '',
                     createdAt: new Date().toISOString(),
                     lastReviewed: null,
                     nextReview: new Date().toISOString(),
@@ -1143,10 +1152,10 @@ function exportCSV() {
         return;
     }
     
-    let csv = '英文,中文,音标,词性,例句\n';
+    let csv = '英文,中文,音标,词性,例句,Emoji\n';
     
     words.forEach(word => {
-        csv += `"${word.english}","${word.chinese}","${word.phonetic || ''}","${word.partOfSpeech || ''}","${word.example || ''}"\n`;
+        csv += `"${word.english}","${word.chinese}","${word.phonetic || ''}","${word.partOfSpeech || ''}","${word.example || ''}","${word.emoji || ''}"\n`;
     });
     
     downloadFile(csv, 'word-memory-export.csv', 'text/csv');

@@ -285,6 +285,18 @@ header h1 {
     opacity: 0.9;
 }
 
+.emoji-display {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.card-emoji {
+    font-size: 3rem;
+    text-align: center;
+    padding: 15px 0;
+}
+
 .word-details p {
     font-size: 1.3rem;
     margin-bottom: 15px;
