@@ -888,10 +888,12 @@ function drawChart(ctx, width, height) {
     }
     
     // 绘制数据
-    const barWidth = chartWidth / last7Days.length / 3;
+    const groupWidth = chartWidth / last7Days.length;
+    const barWidth = groupWidth / 4;
     
     last7Days.forEach((day, index) => {
-        const x = padding + (chartWidth / last7Days.length) * index + barWidth;
+        const groupX = padding + groupWidth * index;
+        const x = groupX + barWidth;
         
         // 学习数量柱状图
         const learnedHeight = (day.learned / maxValue) * chartHeight;
@@ -903,12 +905,12 @@ function drawChart(ctx, width, height) {
         ctx.fillStyle = '#4895ef';
         ctx.fillRect(x + barWidth, height - padding - reviewedHeight, barWidth, reviewedHeight);
         
-        // 日期标签
+        // 日期标签 - 居中显示在每组柱子下方
         ctx.fillStyle = '#666';
-        ctx.font = '12px Microsoft YaHei';
+        ctx.font = '11px Microsoft YaHei';
         ctx.textAlign = 'center';
         const dateLabel = day.date.substring(5); // MM-DD
-        ctx.fillText(dateLabel, x + barWidth, height - padding + 20);
+        ctx.fillText(dateLabel, groupX + groupWidth / 2, height - padding + 20);
     });
     
     // 图例
