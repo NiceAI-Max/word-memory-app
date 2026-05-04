@@ -568,7 +568,7 @@ function speakWord(text, lang = 'en-US') {
     
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
-    utterance.rate = 0.8; // 语速稍慢，适合小朋友
+    utterance.rate = 0.6; // 语速更慢，适合小朋友学习
     utterance.pitch = 1.1; // 音调稍高，更适合小朋友
     
     speechSynthesis.speak(utterance);
