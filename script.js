@@ -48,6 +48,7 @@ function initAudio() {
 
 // 初始化应用
 document.addEventListener('DOMContentLoaded', function() {
+    initTheme(); // 初始化暗黑模式主题
     loadWords();
     loadLearningHistory();
     setupEventListeners();
@@ -62,6 +63,37 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('init-audio').style.display = 'block';
     }
 });
+
+// 初始化主题（暗黑模式）
+function initTheme() {
+    const savedTheme = localStorage.getItem('wordMemoryTheme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.body.classList.add('dark-mode');
+        if (toggleBtn) toggleBtn.textContent = '☀️';
+    } else {
+        document.body.classList.remove('dark-mode');
+        if (toggleBtn) toggleBtn.textContent = '🌙';
+    }
+}
+
+// 切换暗黑模式
+function toggleTheme() {
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    if (document.body.classList.contains('dark-mode')) {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('wordMemoryTheme', 'light');
+        if (toggleBtn) toggleBtn.textContent = '🌙';
+        showMessage('已切换至浅色模式', 'info');
+    } else {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('wordMemoryTheme', 'dark');
+        if (toggleBtn) toggleBtn.textContent = '☀️';
+        showMessage('已切换至深色模式', 'info');
+    }
+}
 
 // 从localStorage加载单词
 function loadWords() {
@@ -266,6 +298,12 @@ function setupEventListeners() {
             switchTab(tabId);
         });
     });
+    
+    // 暗黑模式切换
+    const themeBtn = document.getElementById('dark-mode-toggle');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', toggleTheme);
+    }
     
     // 单词表单提交
     document.getElementById('word-form').addEventListener('submit', function(e) {
@@ -976,10 +1014,17 @@ function showTestFeedback(isCorrect, correctWord) {
     
     feedbackElement.classList.remove('hidden');
     
+    // 移除之前的动画类以允许重复触发
+    feedbackElement.classList.remove('correct-bounce', 'incorrect-shake');
+    // 触发重绘
+    void feedbackElement.offsetWidth;
+    
     if (isCorrect) {
-        resultElement.innerHTML = `<span style="color: #4bb543;">✓ 正确！</span>`;
+        resultElement.innerHTML = `<span style="color: var(--success-color); font-weight: 700;">✓ 正确！</span>`;
+        feedbackElement.classList.add('correct-bounce');
     } else {
-        resultElement.innerHTML = `<span style="color: #d9534f;">✗ 错误！正确答案是: ${correctWord.english} - ${correctWord.chinese}</span>`;
+        resultElement.innerHTML = `<span style="color: var(--danger-color); font-weight: 700;">✗ 错误！正确答案是: ${correctWord.english} - ${correctWord.chinese}</span>`;
+        feedbackElement.classList.add('incorrect-shake');
     }
     
     // 更新准确率
